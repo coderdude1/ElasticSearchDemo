@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.4.0.RELEASE'
+        springBootVersion = '1.4.1.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -28,16 +28,18 @@ repositories {
 
 
 dependencies {
+    /** Not sure if I need this as it spins up a elastic server instance */
     compile('org.springframework.boot:spring-boot-starter-data-elasticsearch')
-    compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+//    compile('org.springframework.boot:spring-boot-starter-data-mongodb')
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile("org.springframework.boot:spring-boot-starter-amqp")
 
     //Swagger
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.5.0'
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.5.0'
 
     /*
-    without this jackson will serialize the whole date object into json
+    without this jackson will serialize the whole datetime object into json
      */
     compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
 

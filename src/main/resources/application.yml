@@ -1,0 +1,9 @@
+spring:
+  data:
+    elasticsearch:
+#      cluster-name: myClusterName
+      cluster-nodes: localhost:9200
+
+logging:
+  level:
+    org.springframework.amqp: WARN
